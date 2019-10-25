@@ -3,6 +3,7 @@
     <head>
         <title>Exercice_7</title>
         <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
       <p>
@@ -17,13 +18,28 @@
       <p>
         Renseignez votre pointure et votre date de naissance
       </p>
-      <form name="form1">
-          <label for="shoeSize">Pointure : </label>
-          <input type="text" id="shoeSize" name="shoeSize" required/><br/>
-          <label for="yearOfBirth">Année de naissance : </label>
-          <input type="text" id="yearOfBirth" name="yearOfBirth" required/><br/>
-          <button id="submit" name="submit" onclick="fAffiche();">Valider</button>
+      <form name="form1" action="#" onsubmit="return fVerifForm(this);">
+        <div class="form-group row">
+          <label for="shoeSize" class="col-sm-2 col-form-label">Pointure : </label>
+          <div class="col-sm-10">
+            <input type="number" step="0.01" class="form-control" id="shoeSize" name="firstNumber" placeholder="chiffre 1" onblur="fVerifNombre(this);">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="yearOfBirth" class="col-sm-2 col-form-label">Année de naissance : </label>
+          <div class="col-sm-10">
+            <input type="number" step="0.01" class="form-control" id="yearOfBirth" name="secondNumber"  placeholder="chiffre 2" onblur="fVerifNombre2(this);">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10 offset-sm-2">
+            <button id="submit" name="submit" class="btn btn-primary" onclick="fAffiche();">Validez</button>
+          </div>
+        </div>
       </form>
-    <script src="script.js"></script>
+      <script src="script.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   </body>
 </html>
